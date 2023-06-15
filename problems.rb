@@ -74,6 +74,35 @@ list = [2, 3, -6, 7, -6, 7]
 list2 = [5, 3, -7]
 list3 = [-5, -1, -3]
 
-p largest_contiguous_subsum(list) # => 8
-p largest_contiguous_subsum(list2) # => 8
-p largest_contiguous_subsum(list3) # => -1
+# p largest_contiguous_subsum(list) # => 8
+# p largest_contiguous_subsum(list2) # => 8
+# p largest_contiguous_subsum(list3) # => -1
+
+def first_anagram?(str1, str2)
+    # 4 letter word
+    """
+    abcd
+    acdb
+    acbd
+    adbc
+    abdc
+    adcb
+    bacd
+    bcda
+    bdac
+    bdca
+
+    """
+    substrings = Array.new(4)
+    (0...str1.length).each do |x|
+
+        (0...str1.length).each do |y|
+end
+
+# Phase 4 + BONUS
+def first_anagram_hash?(str1, str2)
+    str_hash = Hash.new(0)
+    str1.each_char { |letter| str_hash[letter] += 1}
+    str2.each_char { |letter| str_hash[letter] -= 1}
+    str_hash.values.all? { |x| x == 0 }
+end
