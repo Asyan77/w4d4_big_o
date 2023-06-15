@@ -114,15 +114,15 @@
 # def two_sum?(arr, target)
 #     prev_seen = Hash.new
 #     arr.each do |num|
-#         remainder = target - num 
-#        if prev_seen[remainder] 
+#         remainder = target - num
+#        if prev_seen[remainder]
 #         return true
-#        else 
+#        else
 #         prev_seen[num] = true
 #        end
 #     end
 #     return false
-# end 
+# end
 
 # arr = [0, 1, 5, 7]
 # p two_sum?(arr, 6) # => should be true
@@ -130,14 +130,24 @@
 
 def windowed_max_range(arr,win_size)
     current_max_range = 0
+    # create a stack here with size win_size
+    #
     (0..arr.length-win_size).each do |start|
-        sub_arr = arr[start, win_size]
-        # p sub_arr
-        diff = sub_arr.max - sub_arr.min 
+        # sub_arr = arr[start, win_size]
+        # # p sub_arr
+        # diff = sub_arr.max - sub_arr.min
+        q = MyQueue.new()
+        while q.size < win_size
+            ele = arr[start]
+            # min?
+            # max?
+            q.enqueue(arr[start])
+        end
+        diff = max - min
         if diff > current_max_range
             current_max_range = diff
         end
-    end 
+    end
     current_max_range
 end
 
